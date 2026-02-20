@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+.container{
+    display:flex;
+    align-items:first baseline;
+    flex-wrap: wrap;
+    border: 1px solid lightgray;
+
+}
+
+
+ul{
+    width:100%;
+    border: 2px solid black;
+
+    padding: 10px;
+    list-style: none;
+
+}
+
+.noticia{
+    background-color: yellow;
+}
+
+
+

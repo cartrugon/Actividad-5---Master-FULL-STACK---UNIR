@@ -1,0 +1,36 @@
+<p>blog works!</p>
+
+
+<div class="formulario">Deja tu noticia aqui  </div>
+
+<div class="container">
+
+    <p> Titulo</p>
+    <input type="text" placeholder="inserta aqui tu titulo" [(ngModel)]="nuevaNoticia.titulo">
+    
+    <p> Foto</p>
+    <input type="text" placeholder="inserta aqui tu foto" [(ngModel)]="nuevaNoticia.foto">
+    
+    <p> Descripción</p>
+    <input type="text" placeholder="inserta aqui la descripcion" [(ngModel)]="nuevaNoticia.descripcion">
+    
+    <p> Fecha</p>
+    <input type="text" placeholder="inserta aqui la fecha" [(ngModel)]="nuevaNoticia.fecha">
+</div>
+    
+<button (click)="cargarNoticia()"> Cargar Noticia</button>
+
+
+<div class="visual">Noticias </div>
+
+
+<ul>
+
+    @for (noticia of arrayNoticia; track noticia ){
+
+        <li class="noticia">{{noticia.titulo}} </li>
+        <li class="noticia">{{noticia.foto}} </li>
+        <li class="noticia">{{noticia.descripcion}} </li>
+        <li class="noticia">{{noticia.fecha}} </li>
+    }
+</ul>
