@@ -9,6 +9,7 @@ import { NOTICIAS } from '../../db/noticia.db';
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.css',
 })
+
 export class BlogComponent {
 
   nuevaNoticia: INoticia= {id:0, titulo:"", foto:"", descripcion:"", fecha:"" } 
@@ -21,7 +22,7 @@ export class BlogComponent {
     if(!this.nuevaNoticia.titulo || !this.nuevaNoticia.foto ||!this.nuevaNoticia.descripcion ||!this.nuevaNoticia.fecha){
     alert("Todos los campos son obligatorios");
     return;
-  }
+    }
     this.arrayNoticia.push({...this.nuevaNoticia})
   
     console.log(this.arrayNoticia)
