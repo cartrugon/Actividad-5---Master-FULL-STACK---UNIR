@@ -1,59 +1,62 @@
+<body>
 
-<div class="formulario">
+    <div class="formulario">
+        
+        <h2>Deja tu noticia aqui</h2>  
     
-    <h2>Deja tu noticia aqui</h2>  
-
     
-    <div class="container">
-        
-        <div>
-            <p> Titulo</p>
-            <input type="text" placeholder="inserta aqui tu titulo" [(ngModel)]="nuevaNoticia.titulo">
-        </div>
-        
-        <div>
-            <p> Foto</p>
-            <input type="text" placeholder="inserta aqui tu foto" [(ngModel)]="nuevaNoticia.foto">
-        </div>
-        
-        <div>
-            <p> Descripción</p>
-            <input type="text" placeholder="inserta aqui la descripcion" [(ngModel)]="nuevaNoticia.descripcion">
-        </div>
+        <div class="container">
             
-        <div>
-            <p> Fecha</p>
-            <input type="text" placeholder="inserta aqui la fecha" [(ngModel)]="nuevaNoticia.fecha">
-        </div>
-    </div>
-    
-    <button class="btn" (click)="cargarNoticia()"> Cargar Noticia</button>
-    
-</div>
-
-<div class="visual">
-
-    <h2>Noticias</h2>
-    
- </div>
-
-
-<ul>
-
-    @for (noticia of arrayNoticia; track noticia ){
-
-        @if (noticia.titulo && noticia.foto && noticia.descripcion && noticia.fecha) {
-
-            <div class="noticia">
-
-                <li class="titulo"> <h2>{{noticia.titulo}} </h2> </li>
-                <li class="foto"><img [src]="noticia.foto"> </li>
-                <li class="descripcion"><h4>                     {{noticia.descripcion}}</h4></li>
-                <li class="fecha">{{noticia.fecha}} </li>
+            <div>
+                <p> Titulo</p>
+                <input type="text" placeholder="inserta aqui tu titulo" [(ngModel)]="nuevaNoticia.titulo">
             </div>
-        } 
+            
+            <div>
+                <p> Foto</p>
+                <input type="text" placeholder="inserta aqui tu foto" [(ngModel)]="nuevaNoticia.foto">
+            </div>
+            
+            <div>
+                <p> Descripción</p>
+                <input type="text" placeholder="inserta aqui la descripcion" [(ngModel)]="nuevaNoticia.descripcion">
+            </div>
+            
+            <div>
+                <p> Fecha</p>
+                <input type="text" placeholder="inserta aqui la fecha" [(ngModel)]="nuevaNoticia.fecha">
+            </div>
+        </div>
         
-    }@empty{
-        No hay noticias que mostrar.
-    }
-</ul>
+        <button class="btn" (click)="cargarNoticia()"> Cargar Noticia</button>
+    </div>
+
+
+    <div class="visual">
+        
+        <h2>Noticias</h2>
+        
+        
+        
+        <ul>
+            
+            @for (noticia of arrayNoticia; track noticia.id ){
+                
+                <!--@if (noticia.titulo && noticia.foto && noticia.descripcion && noticia.fecha) {-->
+                
+                <div class="noticia">
+                    
+                    <li class="titulo"> <h2>{{noticia.titulo}} </h2> </li>
+                    <li class="foto"><img [src]="noticia.foto"> </li>
+                    <li class="descripcion"><h4>                     {{noticia.descripcion}}</h4></li>
+                    <li class="fecha">{{noticia.fecha}} </li>
+                </div>
+                
+                
+            }@empty{
+                No hay noticias que mostrar.
+            }
+        </ul>
+        
+    </div>
+</body>

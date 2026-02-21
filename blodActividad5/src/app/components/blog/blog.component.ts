@@ -11,16 +11,21 @@ import { NOTICIAS } from '../../db/noticia.db';
 })
 export class BlogComponent {
 
-  nuevaNoticia: INoticia= {titulo:"", foto:"", descripcion:"", fecha:"" }
-  arrayNoticia: INoticia[]= NOTICIAS
+  nuevaNoticia: INoticia= {id:0, titulo:"", foto:"", descripcion:"", fecha:"" } 
+  arrayNoticia: INoticia[]= NOTICIAS //inicializamos asi, aunque podriamos haberlo hecho con un construtor. Necesitamos que cargue las dos primeras noticias.
 
 
 
   cargarNoticia():void {
+
+    if(!this.nuevaNoticia.titulo || !this.nuevaNoticia.foto ||!this.nuevaNoticia.descripcion ||!this.nuevaNoticia.fecha){
+    alert("Todos los campos son obligatorios");
+    return;
+  }
     this.arrayNoticia.push({...this.nuevaNoticia})
   
     console.log(this.arrayNoticia)
-    this.nuevaNoticia= {titulo:"", foto:"", descripcion:"", fecha:"" }
+    this.nuevaNoticia= {id:0, titulo:"", foto:"", descripcion:"", fecha:"" }
 
 
 
