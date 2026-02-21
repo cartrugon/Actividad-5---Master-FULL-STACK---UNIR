@@ -5,15 +5,37 @@
 
 }
 
-.container{
-    display:flex;
-    align-items:first baseline;
-    flex-wrap: wrap;
+.formulario{
+
+    display: row;
+    width: 100%;
+    
+    justify-content: center;
+    align-items: center;
+
     border: 1px solid lightgray;
+    padding: 10px;
+    border-radius: 10px;
+    gap:15px;
+
+
 
 }
 
+.container{
+    display:flex;
+    width: 100%;
+    align-items:first baseline;
+    flex-wrap: wrap;
+    /*border: 1px solid lightgray;*/
+    gap: 10px;
+    margin:10px;
 
+}
+
+.btn{
+    margin: 10px;
+}
 ul{
     width:100%;
     border: 2px solid black;
@@ -25,7 +47,18 @@ ul{
 
 .noticia{
     background-color: yellow;
+    border: 1px solid lightgreen;
+    border-radius: 10px;
+    gap: 10px;
+    padding: 5px;
+    margin-bottom: 10px;
+
 }
+
+/*.titulo{
+    font-size: larger;
+    font-weight: bold;
+}*/
 
 
 

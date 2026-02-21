@@ -1,36 +1,59 @@
-<p>blog works!</p>
 
-
-<div class="formulario">Deja tu noticia aqui  </div>
-
-<div class="container">
-
-    <p> Titulo</p>
-    <input type="text" placeholder="inserta aqui tu titulo" [(ngModel)]="nuevaNoticia.titulo">
+<div class="formulario">
     
-    <p> Foto</p>
-    <input type="text" placeholder="inserta aqui tu foto" [(ngModel)]="nuevaNoticia.foto">
+    <h2>Deja tu noticia aqui</h2>  
+
     
-    <p> Descripción</p>
-    <input type="text" placeholder="inserta aqui la descripcion" [(ngModel)]="nuevaNoticia.descripcion">
+    <div class="container">
+        
+        <div>
+            <p> Titulo</p>
+            <input type="text" placeholder="inserta aqui tu titulo" [(ngModel)]="nuevaNoticia.titulo">
+        </div>
+        
+        <div>
+            <p> Foto</p>
+            <input type="text" placeholder="inserta aqui tu foto" [(ngModel)]="nuevaNoticia.foto">
+        </div>
+        
+        <div>
+            <p> Descripción</p>
+            <input type="text" placeholder="inserta aqui la descripcion" [(ngModel)]="nuevaNoticia.descripcion">
+        </div>
+            
+        <div>
+            <p> Fecha</p>
+            <input type="text" placeholder="inserta aqui la fecha" [(ngModel)]="nuevaNoticia.fecha">
+        </div>
+    </div>
     
-    <p> Fecha</p>
-    <input type="text" placeholder="inserta aqui la fecha" [(ngModel)]="nuevaNoticia.fecha">
+    <button class="btn" (click)="cargarNoticia()"> Cargar Noticia</button>
+    
 </div>
+
+<div class="visual">
+
+    <h2>Noticias</h2>
     
-<button (click)="cargarNoticia()"> Cargar Noticia</button>
-
-
-<div class="visual">Noticias </div>
+ </div>
 
 
 <ul>
 
     @for (noticia of arrayNoticia; track noticia ){
 
-        <li class="noticia">{{noticia.titulo}} </li>
-        <li class="noticia">{{noticia.foto}} </li>
-        <li class="noticia">{{noticia.descripcion}} </li>
-        <li class="noticia">{{noticia.fecha}} </li>
+        @if (noticia.titulo && noticia.foto && noticia.descripcion && noticia.fecha) {
+
+            <div class="noticia">
+
+                <li class="titulo"> <h2>{{noticia.titulo}} </h2> </li>
+                <li class="foto"><img [src]="noticia.foto"> </li>
+                <li class="descripcion"><h4>                     {{noticia.descripcion}}</h4></li>
+                <li class="fecha">{{noticia.fecha}} </li>
+            </div>
+        } 
+        
+    }@empty{
+        No hay noticias que mostrar.
     }
 </ul>
